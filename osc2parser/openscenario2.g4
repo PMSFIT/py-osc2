@@ -274,7 +274,7 @@ HEX_DIGIT : DIGIT | 'A' | 'a' | 'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'E' | 'e' | 
 float_literal : FLOAT_LITERAL;
 FLOAT_LITERAL : ('+' | '-')? DIGIT* '.' DIGIT+ (('e' | 'E') ('+'|'-')? DIGIT+)?  ;
 
-identifier : IDENTIFIER;
+identifier : IDENTIFIER | 'expression' | 'unit' ;
 IDENTIFIER : ( [A-Za-z] [A-Za-z0-9_]* ) | ( '|' (~[|])+ '|' )  ;
 
 physical_literal : PHYSICAL_LITERAL;

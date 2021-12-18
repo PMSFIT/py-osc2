@@ -4,7 +4,7 @@ tokens { INDENT, DEDENT }
 
 @lexer::header{
 from antlr_denter.DenterHelper import DenterHelper
-from openscenario2Parser import openscenario2Parser
+from .openscenario2Parser import openscenario2Parser
 }
 @lexer::members {
 class openscenario2Denter(DenterHelper):

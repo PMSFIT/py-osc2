@@ -31,5 +31,10 @@ if __name__ == '__main__':
         packages=find_packages(),
         python_requires='>=3.6, <4',
         setup_requires=['setuptools-antlr'],
-        install_requires=['antlr4-python3-runtime==4.7.1']
+        install_requires=['antlr4-python3-runtime==4.7.1'],
+        entry_points={
+            'console_scripts': [
+                'osc2parser=osc2parser.osc2parser:main'
+            ]
+        }
     )

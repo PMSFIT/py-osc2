@@ -2,11 +2,12 @@ import sys
 import re
 from antlr4 import *
 from antlr4.tree.Tree import TerminalNodeImpl
-from openscenario2Parser import openscenario2Parser
-from openscenario2Lexer import openscenario2Lexer
+
+from .openscenario2Parser import openscenario2Parser
+from .openscenario2Lexer import openscenario2Lexer
  
-def main(argv):
-    input_stream = FileStream(argv[1])
+def main():
+    input_stream = FileStream(sys.argv[1])
     lexer = openscenario2Lexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = openscenario2Parser(stream)
@@ -21,6 +22,3 @@ def process(tree, ruleNames, indent = 0):
         print("{0}{1}".format("  " * indent, ruleNames[tree.getRuleIndex()]))
         for child in tree.children:
             process(child,ruleNames,indent+1)
-
-if __name__ == '__main__':
-    main(sys.argv)

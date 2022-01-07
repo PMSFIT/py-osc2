@@ -31,7 +31,7 @@ prelude_statement : import_statement  ;
 import_statement : 'import' import_reference NEWLINE  ;
 import_reference : string_literal | structured_identifier  ;
 
-structured_identifier : identifier | structured_identifier '.' identifier  ;
+structured_identifier : (identifier '.')* identifier  ;
 
 osc_declaration :   physical_type_declaration
                     | unit_declaration
@@ -44,17 +44,17 @@ osc_declaration :   physical_type_declaration
 
 type_declarator : non_aggregate_type_declarator | aggregate_type_declarator  ;
 
-non_aggregate_type_declarator : primitive_type | physical_type_name | enum_name | struct_name | actor_name | qualified_behavior_name  ;
+non_aggregate_type_declarator : primitive_type | declared_type_name ;
+declared_type_name : identifier  ;
 
 aggregate_type_declarator : list_type_declarator  ;
 list_type_declarator : 'list' 'of' non_aggregate_type_declarator  ;
 
 primitive_type : 'int' | 'uint' | 'float' | 'bool' | 'string'  ;
 
-physical_type_declaration : 'type' physical_type_name 'is' base_unit_specifier NEWLINE  ;
-physical_type_name : identifier  ;
+physical_type_declaration : 'type' declared_type_name 'is' base_unit_specifier NEWLINE  ;
 
-unit_declaration : 'unit' unit_name 'of' physical_type_name 'is' unit_specifier NEWLINE  ;
+unit_declaration : 'unit' unit_name 'of' declared_type_name 'is' unit_specifier NEWLINE  ;
 
 base_unit_specifier : si_base_unit_specifier  ;
 unit_specifier : si_unit_specifier  ;

@@ -5,3 +5,4 @@
 __version__ = '0.0.2'
 from .openscenario2Parser import openscenario2Parser
 from .openscenario2Lexer import openscenario2Lexer
+from .osc2parser import parse_file

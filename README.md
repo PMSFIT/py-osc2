@@ -1,5 +1,11 @@
 # PMSF py-osc2 Framework
 
+[![Build and Publish to PyPI](https://github.com/PMSFIT/py-osc2/actions/workflows/build-and-publish-pypi.yml/badge.svg)](https://github.com/PMSFIT/py-osc2/actions/workflows/build-and-publish-pypi.yml)
+[![PyPI Latest Release](https://img.shields.io/pypi/v/py-osc2.svg)](https://pypi.org/project/py-osc2/)
+[![Package Status](https://img.shields.io/pypi/status/py-osc2.svg)](https://pypi.org/project/py-osc2/)
+[![License](https://img.shields.io/pypi/l/py-osc2.svg)](https://github.com/PMSFIT/py-osc2/blob/main/LICENSE)
+[![Downloads](https://pepy.tech/badge/py-osc2)](https://pepy.tech/project/py-osc2)
+
 ## What is it?
 
 PMSF **py-osc2** is a Python package for working with ASAM OpenSCENARIO 2

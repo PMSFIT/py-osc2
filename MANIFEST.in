@@ -1,0 +1,3 @@
+graft tests
+graft examples
+global-exclude *.py[cod]

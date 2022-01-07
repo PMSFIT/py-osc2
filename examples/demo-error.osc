@@ -1,0 +1,23 @@
+import "foo.osc"
+import osc.standard
+
+scexnario foo:
+    field: float
+    bar: float = 4.0
+
+scenario baz inherits foo:
+    newfield: float
+    def mymethod(abc:float,dd:float = 42.0) -> float is expression abc*dd
+    do foo()
+
+enum storm_type: [rain_storm, ice_storm, snow_storm]
+
+struct storm_data:
+    storm: storm_type
+    wind_velocity: speed
+
+scenario env.snowstorm:
+    storm_data: storm_data with:
+        keep(it.storm == snow_storm)
+        keep(default it.wind_velocity >= 30kmph)
+    cover(wind_velocity, expression: storm_data.wind_velocity, unit: kmph)

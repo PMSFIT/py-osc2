@@ -45,7 +45,7 @@ osc_declaration :   physical_type_declaration
 type_declarator : non_aggregate_type_declarator | aggregate_type_declarator  ;
 
 non_aggregate_type_declarator : primitive_type | declared_type_name ;
-declared_type_name : identifier  ;
+declared_type_name : identifier ;
 
 aggregate_type_declarator : list_type_declarator  ;
 list_type_declarator : 'list' 'of' non_aggregate_type_declarator  ;
@@ -94,7 +94,7 @@ scenario_member_decl : event_declaration|field_declaration|constraint_declaratio
 qualified_behavior_name : (actor_name '.')? behavior_name  ;
 behavior_name : identifier  ;
 
-action_declaration : 'action' (actor_name '.')? behavior_name ('inherits' behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT)?  ;
+action_declaration : 'action' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT)?  ;
 
 modifier_declaration : 'modifier' (actor_name '.')? modifier_name ('of' qualified_behavior_name)? (':' INDENT (scenario_member_decl | on_directive)+ DEDENT)?  ;
 

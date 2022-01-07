@@ -116,8 +116,8 @@ def serializedATN():
         buf.write("\u00e8\u00ea\u00ec\u00ee\u00f0\u00f2\u00f4\u00f6\u00f8")
         buf.write("\u00fa\u00fc\u00fe\u0100\u0102\u0104\u0106\u0108\u010a")
         buf.write("\2\13\3\2\7\13\3\2\26\35\3\2\66\67\3\2?@\3\2CE\4\2$$O")
-        buf.write("T\3\2UV\3\2WY\5\2\16\16;;ii\2\u04d2\2\u010f\3\2\2\2\4")
-        buf.write("\u011a\3\2\2\2\6\u011c\3\2\2\2\b\u0122\3\2\2\2\n\u0129")
+        buf.write("T\3\2UV\3\2WY\6\2\3\3\16\16;;ii\2\u04d2\2\u010f\3\2\2")
+        buf.write("\2\4\u011a\3\2\2\2\6\u011c\3\2\2\2\b\u0122\3\2\2\2\n\u0129")
         buf.write("\3\2\2\2\f\u0136\3\2\2\2\16\u013a\3\2\2\2\20\u013e\3\2")
         buf.write("\2\2\22\u0140\3\2\2\2\24\u0142\3\2\2\2\26\u0144\3\2\2")
         buf.write("\2\30\u0148\3\2\2\2\32\u014a\3\2\2\2\34\u0150\3\2\2\2")
@@ -1163,7 +1163,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 286
                 self.string_literal()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 287
                 self.structured_identifier()
@@ -1400,7 +1400,7 @@ class openscenario2Parser ( Parser ):
             self.state = 312
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [openscenario2Parser.T__4, openscenario2Parser.T__5, openscenario2Parser.T__6, openscenario2Parser.T__7, openscenario2Parser.T__8, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            if token in [openscenario2Parser.T__0, openscenario2Parser.T__4, openscenario2Parser.T__5, openscenario2Parser.T__6, openscenario2Parser.T__7, openscenario2Parser.T__8, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 310
                 self.non_aggregate_type_declarator()
@@ -1468,7 +1468,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 314
                 self.primitive_type()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 315
                 self.declared_type_name()
@@ -2742,7 +2742,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 430
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                         self.state = 428
                         self.enum_value_reference()
                         pass
@@ -2776,7 +2776,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 443 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61))) != 0) or _la==openscenario2Parser.IDENTIFIER):
+                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61))) != 0) or _la==openscenario2Parser.IDENTIFIER):
                         break
 
                 self.state = 445
@@ -2850,7 +2850,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 449
                 self.event_declaration()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__47, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__47, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 450
                 self.field_declaration()
@@ -3060,7 +3060,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 469
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                         self.state = 467
                         self.enum_value_reference()
                         pass
@@ -3168,7 +3168,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 486
                 self.event_declaration()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__47, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__47, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 487
                 self.field_declaration()
@@ -3342,7 +3342,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 504
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                         self.state = 502
                         self.enum_value_reference()
                         pass
@@ -3374,7 +3374,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 516
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__39, openscenario2Parser.T__47, openscenario2Parser.T__50, openscenario2Parser.T__53, openscenario2Parser.T__54, openscenario2Parser.T__56, openscenario2Parser.T__60, openscenario2Parser.T__61, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__39, openscenario2Parser.T__47, openscenario2Parser.T__50, openscenario2Parser.T__53, openscenario2Parser.T__54, openscenario2Parser.T__56, openscenario2Parser.T__60, openscenario2Parser.T__61, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                         self.state = 514
                         self.scenario_member_decl()
                         pass
@@ -3388,7 +3388,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 518 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (openscenario2Parser.T__63 - 64)) | (1 << (openscenario2Parser.T__75 - 64)) | (1 << (openscenario2Parser.T__83 - 64)) | (1 << (openscenario2Parser.T__88 - 64)) | (1 << (openscenario2Parser.T__89 - 64)) | (1 << (openscenario2Parser.STRING_LITERAL - 64)) | (1 << (openscenario2Parser.BOOL_LITERAL - 64)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 64)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 64)) | (1 << (openscenario2Parser.IDENTIFIER - 64)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 64)))) != 0)):
+                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (openscenario2Parser.T__63 - 64)) | (1 << (openscenario2Parser.T__75 - 64)) | (1 << (openscenario2Parser.T__83 - 64)) | (1 << (openscenario2Parser.T__88 - 64)) | (1 << (openscenario2Parser.T__89 - 64)) | (1 << (openscenario2Parser.STRING_LITERAL - 64)) | (1 << (openscenario2Parser.BOOL_LITERAL - 64)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 64)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 64)) | (1 << (openscenario2Parser.IDENTIFIER - 64)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 64)))) != 0)):
                         break
 
                 self.state = 520
@@ -3709,7 +3709,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 550
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                         self.state = 548
                         self.enum_value_reference()
                         pass
@@ -3741,7 +3741,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 562
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__39, openscenario2Parser.T__47, openscenario2Parser.T__50, openscenario2Parser.T__53, openscenario2Parser.T__54, openscenario2Parser.T__56, openscenario2Parser.T__60, openscenario2Parser.T__61, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__39, openscenario2Parser.T__47, openscenario2Parser.T__50, openscenario2Parser.T__53, openscenario2Parser.T__54, openscenario2Parser.T__56, openscenario2Parser.T__60, openscenario2Parser.T__61, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                         self.state = 560
                         self.scenario_member_decl()
                         pass
@@ -3755,7 +3755,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 564 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (openscenario2Parser.T__63 - 64)) | (1 << (openscenario2Parser.T__75 - 64)) | (1 << (openscenario2Parser.T__83 - 64)) | (1 << (openscenario2Parser.T__88 - 64)) | (1 << (openscenario2Parser.T__89 - 64)) | (1 << (openscenario2Parser.STRING_LITERAL - 64)) | (1 << (openscenario2Parser.BOOL_LITERAL - 64)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 64)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 64)) | (1 << (openscenario2Parser.IDENTIFIER - 64)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 64)))) != 0)):
+                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (openscenario2Parser.T__63 - 64)) | (1 << (openscenario2Parser.T__75 - 64)) | (1 << (openscenario2Parser.T__83 - 64)) | (1 << (openscenario2Parser.T__88 - 64)) | (1 << (openscenario2Parser.T__89 - 64)) | (1 << (openscenario2Parser.STRING_LITERAL - 64)) | (1 << (openscenario2Parser.BOOL_LITERAL - 64)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 64)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 64)) | (1 << (openscenario2Parser.IDENTIFIER - 64)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 64)))) != 0)):
                         break
 
                 self.state = 566
@@ -3874,7 +3874,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 585
                     self._errHandler.sync(self)
                     token = self._input.LA(1)
-                    if token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__39, openscenario2Parser.T__47, openscenario2Parser.T__50, openscenario2Parser.T__53, openscenario2Parser.T__54, openscenario2Parser.T__56, openscenario2Parser.T__60, openscenario2Parser.T__61, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+                    if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__39, openscenario2Parser.T__47, openscenario2Parser.T__50, openscenario2Parser.T__53, openscenario2Parser.T__54, openscenario2Parser.T__56, openscenario2Parser.T__60, openscenario2Parser.T__61, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                         self.state = 583
                         self.scenario_member_decl()
                         pass
@@ -3888,7 +3888,7 @@ class openscenario2Parser ( Parser ):
                     self.state = 587 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0)):
+                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0)):
                         break
 
                 self.state = 589
@@ -4087,7 +4087,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 608 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la==openscenario2Parser.T__11 or _la==openscenario2Parser.T__56 or _la==openscenario2Parser.IDENTIFIER):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__56))) != 0) or _la==openscenario2Parser.IDENTIFIER):
                     break
 
             self.state = 610
@@ -4167,7 +4167,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 619 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (openscenario2Parser.T__63 - 64)) | (1 << (openscenario2Parser.T__75 - 64)) | (1 << (openscenario2Parser.T__83 - 64)) | (1 << (openscenario2Parser.T__88 - 64)) | (1 << (openscenario2Parser.T__89 - 64)) | (1 << (openscenario2Parser.STRING_LITERAL - 64)) | (1 << (openscenario2Parser.BOOL_LITERAL - 64)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 64)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 64)) | (1 << (openscenario2Parser.IDENTIFIER - 64)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 64)))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__39) | (1 << openscenario2Parser.T__47) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__54) | (1 << openscenario2Parser.T__56) | (1 << openscenario2Parser.T__60) | (1 << openscenario2Parser.T__61) | (1 << openscenario2Parser.T__62))) != 0) or ((((_la - 64)) & ~0x3f) == 0 and ((1 << (_la - 64)) & ((1 << (openscenario2Parser.T__63 - 64)) | (1 << (openscenario2Parser.T__75 - 64)) | (1 << (openscenario2Parser.T__83 - 64)) | (1 << (openscenario2Parser.T__88 - 64)) | (1 << (openscenario2Parser.T__89 - 64)) | (1 << (openscenario2Parser.STRING_LITERAL - 64)) | (1 << (openscenario2Parser.BOOL_LITERAL - 64)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 64)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 64)) | (1 << (openscenario2Parser.IDENTIFIER - 64)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 64)))) != 0)):
                     break
 
             self.state = 621
@@ -4490,7 +4490,7 @@ class openscenario2Parser ( Parser ):
 
 
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__43, openscenario2Parser.T__44, openscenario2Parser.T__45, openscenario2Parser.T__46, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__43, openscenario2Parser.T__44, openscenario2Parser.T__45, openscenario2Parser.T__46, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 656
                 self.event_condition()
@@ -4808,7 +4808,7 @@ class openscenario2Parser ( Parser ):
             self.state = 681
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+            if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 676
                 self.bool_expression()
@@ -5204,7 +5204,7 @@ class openscenario2Parser ( Parser ):
             self.state = 715
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 713
                 self.parameter_declaration()
@@ -6082,7 +6082,7 @@ class openscenario2Parser ( Parser ):
             self.state = 809
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==openscenario2Parser.T__11 or _la==openscenario2Parser.T__56 or _la==openscenario2Parser.IDENTIFIER:
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__56))) != 0) or _la==openscenario2Parser.IDENTIFIER:
                 self.state = 808
                 self.argument_list_specification()
 
@@ -6239,7 +6239,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 832
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
                     self.state = 831
                     self.argument_list()
 
@@ -6475,7 +6475,7 @@ class openscenario2Parser ( Parser ):
             self.state = 856
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
                 self.state = 855
                 self.argument_list()
 
@@ -6819,7 +6819,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 888
                 self.composition()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                 self.state = 889
                 self.behavior_invocation()
                 pass
@@ -6977,7 +6977,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 909 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (openscenario2Parser.T__64 - 65)) | (1 << (openscenario2Parser.T__65 - 65)) | (1 << (openscenario2Parser.T__66 - 65)) | (1 << (openscenario2Parser.T__67 - 65)) | (1 << (openscenario2Parser.T__68 - 65)) | (1 << (openscenario2Parser.T__69 - 65)) | (1 << (openscenario2Parser.T__75 - 65)) | (1 << (openscenario2Parser.T__83 - 65)) | (1 << (openscenario2Parser.T__88 - 65)) | (1 << (openscenario2Parser.T__89 - 65)) | (1 << (openscenario2Parser.STRING_LITERAL - 65)) | (1 << (openscenario2Parser.BOOL_LITERAL - 65)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 65)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 65)) | (1 << (openscenario2Parser.IDENTIFIER - 65)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 65)))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 65)) & ~0x3f) == 0 and ((1 << (_la - 65)) & ((1 << (openscenario2Parser.T__64 - 65)) | (1 << (openscenario2Parser.T__65 - 65)) | (1 << (openscenario2Parser.T__66 - 65)) | (1 << (openscenario2Parser.T__67 - 65)) | (1 << (openscenario2Parser.T__68 - 65)) | (1 << (openscenario2Parser.T__69 - 65)) | (1 << (openscenario2Parser.T__75 - 65)) | (1 << (openscenario2Parser.T__83 - 65)) | (1 << (openscenario2Parser.T__88 - 65)) | (1 << (openscenario2Parser.T__89 - 65)) | (1 << (openscenario2Parser.STRING_LITERAL - 65)) | (1 << (openscenario2Parser.BOOL_LITERAL - 65)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 65)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 65)) | (1 << (openscenario2Parser.IDENTIFIER - 65)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 65)))) != 0)):
                     break
 
             self.state = 911
@@ -7116,7 +7116,7 @@ class openscenario2Parser ( Parser ):
             self.state = 925
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
                 self.state = 924
                 self.argument_list()
 
@@ -7206,7 +7206,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 938 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 71)) & ~0x3f) == 0 and ((1 << (_la - 71)) & ((1 << (openscenario2Parser.T__70 - 71)) | (1 << (openscenario2Parser.T__75 - 71)) | (1 << (openscenario2Parser.T__83 - 71)) | (1 << (openscenario2Parser.T__88 - 71)) | (1 << (openscenario2Parser.T__89 - 71)) | (1 << (openscenario2Parser.STRING_LITERAL - 71)) | (1 << (openscenario2Parser.BOOL_LITERAL - 71)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 71)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 71)) | (1 << (openscenario2Parser.IDENTIFIER - 71)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 71)))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__50) | (1 << openscenario2Parser.T__53) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 71)) & ~0x3f) == 0 and ((1 << (_la - 71)) & ((1 << (openscenario2Parser.T__70 - 71)) | (1 << (openscenario2Parser.T__75 - 71)) | (1 << (openscenario2Parser.T__83 - 71)) | (1 << (openscenario2Parser.T__88 - 71)) | (1 << (openscenario2Parser.T__89 - 71)) | (1 << (openscenario2Parser.STRING_LITERAL - 71)) | (1 << (openscenario2Parser.BOOL_LITERAL - 71)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 71)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 71)) | (1 << (openscenario2Parser.IDENTIFIER - 71)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 71)))) != 0)):
                     break
 
             self.state = 940
@@ -7270,7 +7270,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 942
                 self.constraint_declaration()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__75, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 943
                 self.modifier_application()
@@ -7561,7 +7561,7 @@ class openscenario2Parser ( Parser ):
             self.state = 970
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
                 self.state = 969
                 self.argument_list()
 
@@ -8372,7 +8372,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 1061
                 self.inversion()
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__83, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 1062
                 self.relation(0)
@@ -8814,7 +8814,7 @@ class openscenario2Parser ( Parser ):
             self.state = 1110
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
+            if token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__13, openscenario2Parser.T__28, openscenario2Parser.T__56, openscenario2Parser.T__88, openscenario2Parser.T__89, openscenario2Parser.STRING_LITERAL, openscenario2Parser.BOOL_LITERAL, openscenario2Parser.INTEGER_LITERAL, openscenario2Parser.FLOAT_LITERAL, openscenario2Parser.IDENTIFIER, openscenario2Parser.PHYSICAL_LITERAL]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 1107
                 self.postfix_exp(0)
@@ -9111,7 +9111,7 @@ class openscenario2Parser ( Parser ):
                         self.state = 1137
                         self._errHandler.sync(self)
                         _la = self._input.LA(1)
-                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
+                        if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__13) | (1 << openscenario2Parser.T__28) | (1 << openscenario2Parser.T__56))) != 0) or ((((_la - 76)) & ~0x3f) == 0 and ((1 << (_la - 76)) & ((1 << (openscenario2Parser.T__75 - 76)) | (1 << (openscenario2Parser.T__83 - 76)) | (1 << (openscenario2Parser.T__88 - 76)) | (1 << (openscenario2Parser.T__89 - 76)) | (1 << (openscenario2Parser.STRING_LITERAL - 76)) | (1 << (openscenario2Parser.BOOL_LITERAL - 76)) | (1 << (openscenario2Parser.INTEGER_LITERAL - 76)) | (1 << (openscenario2Parser.FLOAT_LITERAL - 76)) | (1 << (openscenario2Parser.IDENTIFIER - 76)) | (1 << (openscenario2Parser.PHYSICAL_LITERAL - 76)))) != 0):
                             self.state = 1136
                             self.argument_list()
 
@@ -9256,7 +9256,7 @@ class openscenario2Parser ( Parser ):
                 self.state = 1153
                 self.match(openscenario2Parser.T__88)
                 pass
-            elif token in [openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
+            elif token in [openscenario2Parser.T__0, openscenario2Parser.T__11, openscenario2Parser.T__56, openscenario2Parser.IDENTIFIER]:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 1154
                 self.identifier()
@@ -9848,7 +9848,7 @@ class openscenario2Parser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 1208
             _la = self._input.LA(1)
-            if not(_la==openscenario2Parser.T__11 or _la==openscenario2Parser.T__56 or _la==openscenario2Parser.IDENTIFIER):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << openscenario2Parser.T__0) | (1 << openscenario2Parser.T__11) | (1 << openscenario2Parser.T__56))) != 0) or _la==openscenario2Parser.IDENTIFIER):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

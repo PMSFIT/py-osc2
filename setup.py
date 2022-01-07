@@ -14,7 +14,6 @@ if __name__ == '__main__':
 
     setup(
         name='py-osc2',
-        version='0.0.1',
         description='PMSF Python support for OpenSCENARIO 2.x',
         long_description=long_description,
         long_description_content_type='text/markdown',
@@ -31,7 +30,7 @@ if __name__ == '__main__':
         packages=find_packages(),
         python_requires='>=3.6, <4',
         setup_requires=['setuptools-antlr'],
-        install_requires=['antlr4-python3-runtime==4.7.1'],
+        install_requires=['antlr4-python3-runtime==4.7.1','antlr-denter'],
         entry_points={
             'console_scripts': [
                 'osc2parser=osc2parser.osc2parser:main'

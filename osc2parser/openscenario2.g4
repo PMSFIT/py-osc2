@@ -278,8 +278,8 @@ UINT_LITERAL : DIGIT+  ;
 hex_uint_literal : HEX_UINT_LITERAL;
 HEX_UINT_LITERAL : '0x' HEX_DIGIT+  ;
 INT_LITERAL : '-' DIGIT+  ;
-DIGIT : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'  ;
-HEX_DIGIT : DIGIT | 'A' | 'a' | 'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'E' | 'e' | 'F' | 'f'  ;
+fragment DIGIT : '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'  ;
+fragment HEX_DIGIT : DIGIT | 'A' | 'a' | 'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'E' | 'e' | 'F' | 'f'  ;
 
 float_literal : FLOAT_LITERAL;
 FLOAT_LITERAL : ('+' | '-')? DIGIT* '.' DIGIT+ (('e' | 'E') ('+'|'-')? DIGIT+)?  ;

@@ -288,9 +288,8 @@ identifier : IDENTIFIER | 'expression' | 'unit' | 'import' ;
 IDENTIFIER : ( [A-Za-z] [A-Za-z0-9_]* ) | ( '|' (~[|])+ '|' )  ;
 
 physical_literal : PHYSICAL_LITERAL;
-PHYSICAL_LITERAL : (FLOAT_LITERAL | INTEGER_LITERAL) UNIT_NAME  ;
-unit_name : UNIT_NAME ;
-UNIT_NAME : IDENTIFIER ;
+PHYSICAL_LITERAL : (FLOAT_LITERAL | INTEGER_LITERAL) IDENTIFIER ;
+unit_name : IDENTIFIER | si_base_unit_name ;
 
 LINEJOINER : '\\' '\r'? '\n' -> skip ;
 

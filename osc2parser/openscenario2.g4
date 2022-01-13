@@ -284,7 +284,7 @@ fragment HEX_DIGIT : DIGIT | 'A' | 'a' | 'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'E'
 float_literal : FLOAT_LITERAL;
 FLOAT_LITERAL : ('+' | '-')? DIGIT* '.' DIGIT+ (('e' | 'E') ('+'|'-')? DIGIT+)?  ;
 
-identifier : IDENTIFIER | 'expression' | 'unit' | 'import' | si_base_unit_name ;
+identifier : IDENTIFIER | 'expression' | 'unit' | 'import' | si_base_unit_name | 'factor' | 'offset' | 'enum' | 'struct' | 'actor' | 'scenario' | 'action' | 'modifier' ;
 IDENTIFIER : ( [A-Za-z] [A-Za-z0-9_]* ) | ( '|' (~[|])+ '|' )  ;
 
 physical_literal : PHYSICAL_LITERAL;

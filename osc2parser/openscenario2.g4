@@ -74,8 +74,8 @@ si_base_exponent_list : si_base_exponent (',' si_base_exponent)*  ;
 si_base_exponent : si_base_unit_name ':' integer_literal  ;
 
 si_unit_specifier : 'SI' '(' si_base_exponent_list (',' si_factor)? (',' si_offset)? ')'  ;
-si_factor : 'factor' ':' float_literal  ;
-si_offset : 'offset' ':' float_literal  ;
+si_factor : 'factor' ':' ( float_literal | integer_literal ) ;
+si_offset : 'offset' ':' ( float_literal | integer_literal ) ;
 si_base_unit_name : 'kg' | 'm' | 's' | 'A' | 'K' | 'mol' | 'cd' | 'rad'  ;
 
 enum_declaration : 'enum' enum_name ':' '[' enum_member_decl (',' enum_member_decl)* ']' NEWLINE  ;

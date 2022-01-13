@@ -86,27 +86,27 @@ enum_member_value : uint_literal | hex_uint_literal  ;
 
 enum_value_reference : (enum_name '.')? enum_member_name  ;
 
-struct_declaration : 'struct' struct_name ('inherits' struct_name ('(' field_name '=='  (enum_value_reference | bool_literal) ')')?)? (':' INDENT struct_member_decl+ DEDENT)?  ;
+struct_declaration : 'struct' struct_name ('inherits' struct_name ('(' field_name '=='  (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT struct_member_decl+ DEDENT) | NEWLINE )  ;
 
 struct_member_decl : event_declaration|field_declaration|constraint_declaration|method_declaration|coverage_declaration  ;
 struct_name : identifier  ;
 field_name : identifier  ;
 
-actor_declaration : 'actor' actor_name ('inherits' actor_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? (':' INDENT actor_member_decl+)?  ;
+actor_declaration : 'actor' actor_name ('inherits' actor_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT actor_member_decl+ DEDENT) | NEWLINE )  ;
 
 actor_member_decl : event_declaration|field_declaration|constraint_declaration|method_declaration|coverage_declaration  ;
 actor_name : identifier  ;
 
-scenario_declaration : 'scenario' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT)?  ;
+scenario_declaration : 'scenario' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT) | NEWLINE )  ;
 
 scenario_member_decl : event_declaration|field_declaration|constraint_declaration|method_declaration|coverage_declaration|modifier_application  ;
 
 qualified_behavior_name : (actor_name '.')? behavior_name  ;
 behavior_name : identifier  ;
 
-action_declaration : 'action' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT)?  ;
+action_declaration : 'action' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT) | NEWLINE )  ;
 
-modifier_declaration : 'modifier' (actor_name '.')? modifier_name ('of' qualified_behavior_name)? (':' INDENT (scenario_member_decl | on_directive)+ DEDENT)?  ;
+modifier_declaration : 'modifier' (actor_name '.')? modifier_name ('of' qualified_behavior_name)? ( (':' INDENT (scenario_member_decl | on_directive)+ DEDENT) | NEWLINE )  ;
 
 modifier_name : identifier  ;
 

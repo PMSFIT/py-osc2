@@ -1,3 +1,8 @@
+# Note: This is a snapshot of a sample scenario file developed as part
+# of the OpenSCENARIO 2.x project. It is not intended to demonstrate
+# actual UNECE ALKS scenarios, nor is necessarily up to date with final
+# OpenSCENARIO 2.0 semantics or domain model usage.
+
 # UNECE 157 ALKS P.60
 # 4. Test scenarios to assess the performance of the system with regard to the dynamic driving task
 #     4.1. Lane Keeping
@@ -12,13 +17,7 @@
 # Addendum in previous chapter:
 # The lateral wandering distance the vehicle will normally wander within the lane is 0.375m.
 
-# ---------------------------------------------------------------------------------------------------------------
-# Potential future extensions of this scenario:
-# - add expected behavior of vehicle under test (ego). For example, keep stable position within lane
-# - different curvatures of the road
-#   Option 1: define road with curvature and force scenario to happen there
-#   Option 2: observer/log curvature radius during simulation and define some success criteria that requires a certain amount of curves
-# ---------------------------------------------------------------------------------------------------------------
+import osc.standard
 
 scenario swerving_side_vehicle:
 
@@ -38,7 +37,7 @@ scenario swerving_side_vehicle:
     # is there a way to define a mathematical path for abstract scenarios?
 
     # current answer, but may be different in future
-    r1: Road with: # instantiate the road section
+    r1: road with: # instantiate the road section
         keep(it.min_lanes == 2) # Ensure we have at least 2 lanes
         # We need to additionally require lanes to be driving lanes => will be clarified soon
 
@@ -75,26 +74,8 @@ scenario swerving_side_vehicle:
 
         # (d) With another vehicle driving close beside in the adjacent lane
         parallel:
-            adjacent_vehicle.FollowLane(0.375m)                         # specialized action (short hand for drive) same as drive with keep_lane(lateral: 0.375)
+            adjacent_vehicle.follow_lane(0.375m)                         # specialized action (short hand for drive) same as drive with keep_lane(lateral: 0.375)
                                                                         # adjacent vehicle should drive as close beside as allowed by the ALKS to be not
                                                                         # lane change intention (cut in)
             adjacent_vehicle.drive() with:
                 position([-1m,1m], ahead_of: ego)
-
-
-
-
-# ---------------------------------------------------------------------------------------------------------------
-    # Discussion on 15.07 on sampling
-    # is this really needed in an abstract scenario?
-    # to be continued...
-    # The following block shows how one could ensure the same sampling rate across different simulator implementations. In the past this was left up to the simulator.
-    # Q: how to deal with a sampling running faster than simulation speed, interpolation (guessing?),
-    # and what if the sample time is not an integer divisor of a faster runnning sim time (eg, 0.05s sim time, with a 0.13s sample time.)
-    #var cycleTime: time = sample(simulation.cycleTime, @tick)
-    #var SimulationTime: time = sample(time, @sampleRate)
-
-    #event tick is (time.rate >= 1 ms)
-    #event sampleRate is (cycleTime >= 5 ms)
-    #var egoCurrentSpeed: speed = sample(ego.speed, @event)
-    #

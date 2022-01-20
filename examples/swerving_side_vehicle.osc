@@ -19,11 +19,13 @@
 
 import osc.standard
 
+actor car inherits vehicle(vehicle_category == vehicle_category.car)
+
 scenario swerving_side_vehicle:
 
-    ego: \
-    car # instantiate ego vehicle
-    lead_vehicle: car # instantiate traffic vehicle 1
+    map: map                                         # Map instance
+    ego: car              # instantiate ego vehicle
+    lead_vehicle: car     # instantiate traffic vehicle 1
     adjacent_vehicle: car # instantiate traffic vehicle 2
     min_dist: length
     max_dist: length
@@ -33,8 +35,6 @@ scenario swerving_side_vehicle:
     #   route: ordered list of road elements (not ODR road sections!)
     #   path: Sequence of coordinates without any time constraints
     #   trajectory: Sequence of coordinates with time stamps
-    # 15.07: This needs to be clarified further...
-    # is there a way to define a mathematical path for abstract scenarios?
 
     # current answer, but may be different in future
     r1: road with: # instantiate the road section

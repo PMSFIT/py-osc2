@@ -381,7 +381,7 @@ def serializedATN():
         buf.write("\5d\63\2\u0303\u0304\7\22\2\2\u0304\u0306\5\u0086D\2\u0305")
         buf.write("\u0303\3\2\2\2\u0305\u0306\3\2\2\2\u0306\u0307\3\2\2\2")
         buf.write("\u0307\u0308\7\21\2\2\u0308\u0085\3\2\2\2\u0309\u030a")
-        buf.write("\5\u00f4{\2\u030a\u0087\3\2\2\2\u030b\u030c\7\64\2\2\u030c")
+        buf.write("\5\u00d4k\2\u030a\u0087\3\2\2\2\u030b\u030c\7\64\2\2\u030c")
         buf.write("\u030d\7\23\2\2\u030d\u030f\7l\2\2\u030e\u0310\5\u008a")
         buf.write("F\2\u030f\u030e\3\2\2\2\u0310\u0311\3\2\2\2\u0311\u030f")
         buf.write("\3\2\2\2\u0311\u0312\3\2\2\2\u0312\u0313\3\2\2\2\u0313")
@@ -5607,8 +5607,8 @@ class openscenario2Parser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def value_exp(self):
-            return self.getTypedRuleContext(openscenario2Parser.Value_expContext,0)
+        def expression(self):
+            return self.getTypedRuleContext(openscenario2Parser.ExpressionContext,0)
 
 
         def getRuleIndex(self):
@@ -5638,7 +5638,7 @@ class openscenario2Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 775
-            self.value_exp()
+            self.expression()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

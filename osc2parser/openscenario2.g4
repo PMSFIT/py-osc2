@@ -143,7 +143,7 @@ parameter_declaration : field_name (',' field_name)* ':' type_declarator ('=' de
 variable_declaration : 'var' field_name (',' field_name)* ':' type_declarator ('=' default_value | sample_expression )? NEWLINE  ;
 
 sample_expression : 'sample' '(' expression ',' event_specification (',' default_value)? ')'  ;
-default_value : value_exp  ;
+default_value : expression  ;
 
 parameter_with_declaration : 'with' ':' INDENT parameter_with_member+ DEDENT  ;
 parameter_with_member : constraint_declaration  ;

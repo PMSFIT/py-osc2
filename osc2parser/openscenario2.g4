@@ -243,7 +243,7 @@ factor : postfix_exp | '-' factor  ;
 postfix_exp : primary_exp #primary_exp_pe
               | postfix_exp '.' 'as' '(' type_declarator ')' #cast_exp_pe
               | postfix_exp '.' 'is' '(' type_declarator ')' #type_test_exp_pe
-              | postfix_exp '(' expression ')?' #element_access_pe
+              | postfix_exp '[' expression ']' #element_access_pe
               | postfix_exp '(' (argument_list)? ')' #function_application_pe
               | postfix_exp '.' field_name #field_access_pe
               ;

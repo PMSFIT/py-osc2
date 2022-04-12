@@ -113,7 +113,7 @@ modifier_name : identifier  ;
 
 type_extension : enum_type_extension | structured_type_extension  ;
 
-enum_type_extension : 'extend' enum_name ':' INDENT (enum_member_decl NEWLINE)+ DEDENT  ;
+enum_type_extension : 'extend' enum_name ':' '[' enum_member_decl (',' enum_member_decl)* ']' NEWLINE  ;
 
 structured_type_extension : 'extend' extendable_type_name ':' INDENT extension_member_decl+ DEDENT  ;
 

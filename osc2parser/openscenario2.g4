@@ -50,7 +50,8 @@ osc_declaration :   physical_type_declaration
                     | actor_declaration
                     | action_declaration
                     | scenario_declaration
-                    | modifier_declaration  ;
+                    | modifier_declaration
+                    | type_extension  ;
 
 type_declarator : non_aggregate_type_declarator | aggregate_type_declarator  ;
 

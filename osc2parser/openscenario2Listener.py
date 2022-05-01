@@ -395,6 +395,15 @@ class openscenario2Listener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by openscenario2Parser#global_parameter_declaration.
+    def enterGlobal_parameter_declaration(self, ctx:openscenario2Parser.Global_parameter_declarationContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#global_parameter_declaration.
+    def exitGlobal_parameter_declaration(self, ctx:openscenario2Parser.Global_parameter_declarationContext):
+        pass
+
+
     # Enter a parse tree produced by openscenario2Parser#type_extension.
     def enterType_extension(self, ctx:openscenario2Parser.Type_extensionContext):
         pass

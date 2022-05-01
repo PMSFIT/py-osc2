@@ -51,7 +51,8 @@ osc_declaration :   physical_type_declaration
                     | action_declaration
                     | scenario_declaration
                     | modifier_declaration
-                    | type_extension  ;
+                    | type_extension
+                    | global_parameter_declaration  ;
 
 type_declarator : non_aggregate_type_declarator | aggregate_type_declarator  ;
 
@@ -85,7 +86,7 @@ enum_name : identifier  ;
 enum_member_name : identifier  ;
 enum_member_value : uint_literal | hex_uint_literal  ;
 
-enum_value_reference : (enum_name '.')? enum_member_name  ;
+enum_value_reference : (enum_name '!')? enum_member_name  ;
 
 struct_declaration : 'struct' struct_name ('inherits' struct_name ('(' field_name '=='  (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT struct_member_decl+ DEDENT) | NEWLINE )  ;
 
@@ -110,6 +111,8 @@ action_declaration : 'action' qualified_behavior_name ('inherits' qualified_beha
 modifier_declaration : 'modifier' (actor_name '.')? modifier_name ('of' qualified_behavior_name)? ( (':' INDENT (scenario_member_decl | on_directive)+ DEDENT) | NEWLINE )  ;
 
 modifier_name : identifier  ;
+
+global_parameter_declaration : 'global' parameter_declaration  ;
 
 type_extension : enum_type_extension | structured_type_extension  ;
 
@@ -258,6 +261,7 @@ value_exp : integer_literal
             | physical_literal
             | bool_literal
             | string_literal
+            | enum_value_reference
             | list_constructor
             | range_constructor  ;
 

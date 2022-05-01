@@ -224,6 +224,11 @@ class openscenario2Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by openscenario2Parser#global_parameter_declaration.
+    def visitGlobal_parameter_declaration(self, ctx:openscenario2Parser.Global_parameter_declarationContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by openscenario2Parser#type_extension.
     def visitType_extension(self, ctx:openscenario2Parser.Type_extensionContext):
         return self.visitChildren(ctx)

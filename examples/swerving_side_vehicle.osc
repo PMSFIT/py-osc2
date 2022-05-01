@@ -19,7 +19,7 @@
 
 import osc.standard
 
-actor car inherits vehicle(vehicle_category == vehicle_category.car)
+actor car inherits vehicle(vehicle_category == vehicle_category!car)
 
 scenario swerving_side_vehicle:
 

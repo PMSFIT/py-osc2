@@ -83,7 +83,7 @@ python setup.py antlr develop
 
 ## License
 
-(C) 2021-2022 PMSF IT Consulting Pierre R. Mai
+(C) 2021-2023 PMSF IT Consulting Pierre R. Mai
 
 [MPL 2.0](LICENSE)
 

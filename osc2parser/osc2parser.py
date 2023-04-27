@@ -44,7 +44,7 @@ def process_file(file, quiet, print_tree):
     return 0 if errors==0 else 1
 
 def parse_file(file, quiet=True):
-    input_stream = FileStream(file)
+    input_stream = FileStream(file, 'utf-8')
     lexer = openscenario2Lexer(input_stream)
     stream = CommonTokenStream(lexer)
     parser = openscenario2Parser(stream)

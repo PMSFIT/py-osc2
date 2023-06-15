@@ -144,7 +144,7 @@ duration_expression : expression  ;
 
 field_declaration :  parameter_declaration | variable_declaration  ;
 parameter_declaration : field_name (',' field_name)* ':' type_declarator ('=' default_value)? (parameter_with_declaration | NEWLINE)  ;
-variable_declaration : 'var' field_name (',' field_name)* ':' type_declarator ('=' default_value | sample_expression )? NEWLINE  ;
+variable_declaration : 'var' field_name (',' field_name)* ':' type_declarator ('=' (default_value | sample_expression) )? NEWLINE  ;
 
 sample_expression : 'sample' '(' expression ',' event_specification (',' default_value)? ')'  ;
 default_value : expression  ;

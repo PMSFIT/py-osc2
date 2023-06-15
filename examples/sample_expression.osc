@@ -1,0 +1,12 @@
+import osc.standard
+
+scenario simple_drive:
+    
+    car: vehicle
+    environment: environment
+    var sim_start_time: time = sample(environment.datetime, @root_phase.start)
+    
+    do root_phase: serial:
+        car.drive() with:
+            until (environment.datetime - sim_start_time >= 60s)
+

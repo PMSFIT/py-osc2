@@ -1,0 +1,42 @@
+namespace demo
+
+export foo
+
+struct foo
+
+namespace null use demo
+
+extend foo:
+  bar: float
+
+namespace demo2
+
+export demo::foo, *
+
+struct foo2:
+  bar2: float
+
+namespace null
+
+struct user:
+  field1: demo::foo
+  field2: demo2::foo2
+  field3: demo2::foo
+
+namespace demo3
+
+export demo::*, demo2::*
+
+extend ::user:
+  field4: float
+  field5: float
+
+namespace null use demo3
+
+extend user:
+  keep(demo3::field4 == demo3::field5)
+  keep(demo3::field4 == 42.0)
+
+struct user2:
+  field1: foo
+  field2: foo2

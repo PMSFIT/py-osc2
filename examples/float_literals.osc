@@ -1,0 +1,10 @@
+struct demo:
+  field1: float = 0.1
+  field2: float = 1E-6
+  field3: float = +inf
+  field4: float = -inf
+  field5: float = -0.0
+  field6: float = -nan
+  field7: float = nan
+  field8: float = inf
+  field9: float = .1e+7

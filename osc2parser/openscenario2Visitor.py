@@ -34,6 +34,46 @@ class openscenario2Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by openscenario2Parser#main_statement.
+    def visitMain_statement(self, ctx:openscenario2Parser.Main_statementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#namespace_statement.
+    def visitNamespace_statement(self, ctx:openscenario2Parser.Namespace_statementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#namespace_list.
+    def visitNamespace_list(self, ctx:openscenario2Parser.Namespace_listContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#namespace_name.
+    def visitNamespace_name(self, ctx:openscenario2Parser.Namespace_nameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#global_namespace_name.
+    def visitGlobal_namespace_name(self, ctx:openscenario2Parser.Global_namespace_nameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#export_statement.
+    def visitExport_statement(self, ctx:openscenario2Parser.Export_statementContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#export_specification.
+    def visitExport_specification(self, ctx:openscenario2Parser.Export_specificationContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#export_wildcard_specification.
+    def visitExport_wildcard_specification(self, ctx:openscenario2Parser.Export_wildcard_specificationContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by openscenario2Parser#osc_declaration.
     def visitOsc_declaration(self, ctx:openscenario2Parser.Osc_declarationContext):
         return self.visitChildren(ctx)
@@ -539,6 +579,21 @@ class openscenario2Visitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by openscenario2Parser#unqualified_argument_list.
+    def visitUnqualified_argument_list(self, ctx:openscenario2Parser.Unqualified_argument_listContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#unqualified_argument_name.
+    def visitUnqualified_argument_name(self, ctx:openscenario2Parser.Unqualified_argument_nameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#unqualified_named_argument.
+    def visitUnqualified_named_argument(self, ctx:openscenario2Parser.Unqualified_named_argumentContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by openscenario2Parser#expression.
     def visitExpression(self, ctx:openscenario2Parser.ExpressionContext):
         return self.visitChildren(ctx)
@@ -691,6 +746,16 @@ class openscenario2Visitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by openscenario2Parser#identifier.
     def visitIdentifier(self, ctx:openscenario2Parser.IdentifierContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#qualified_identifier.
+    def visitQualified_identifier(self, ctx:openscenario2Parser.Qualified_identifierContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by openscenario2Parser#prefixed_identifier.
+    def visitPrefixed_identifier(self, ctx:openscenario2Parser.Prefixed_identifierContext):
         return self.visitChildren(ctx)
 
 

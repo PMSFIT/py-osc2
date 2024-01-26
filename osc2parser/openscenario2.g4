@@ -1,7 +1,7 @@
 /*
  * PMSF py-osc2 Framework
  *
- * (C) 2021 -- 2023 PMSF IT Consulting Pierre R. Mai
+ * (C) 2021 -- 2024 PMSF IT Consulting Pierre R. Mai
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -34,7 +34,7 @@ def nextToken(self):
 
 }
 
-osc_file : prelude_statement* osc_declaration*  EOF;
+osc_file: prelude_statement* main_statement* EOF;
 
 prelude_statement : import_statement  ;
 
@@ -42,6 +42,18 @@ import_statement : 'import' import_reference NEWLINE  ;
 import_reference : string_literal | structured_identifier  ;
 
 structured_identifier : (identifier '.')* identifier  ;
+
+main_statement: namespace_statement | export_statement | osc_declaration;
+
+namespace_statement: 'namespace' namespace_name ('use' namespace_list)? NEWLINE;
+
+namespace_list: namespace_name (',' namespace_name)*;
+namespace_name: identifier | global_namespace_name;
+global_namespace_name: 'null';
+
+export_statement: 'export' export_specification (',' export_specification)* NEWLINE;
+export_specification: qualified_identifier | export_wildcard_specification;
+export_wildcard_specification: ( namespace_name? '::' )? '*';
 
 osc_declaration :   physical_type_declaration
                     | unit_declaration
@@ -57,7 +69,7 @@ osc_declaration :   physical_type_declaration
 type_declarator : non_aggregate_type_declarator | aggregate_type_declarator  ;
 
 non_aggregate_type_declarator : primitive_type | declared_type_name ;
-declared_type_name : identifier ;
+declared_type_name: qualified_identifier;
 
 aggregate_type_declarator : list_type_declarator  ;
 list_type_declarator : 'list' 'of' non_aggregate_type_declarator  ;
@@ -83,7 +95,7 @@ si_base_unit_name : 'kg' | 'm' | 's' | 'A' | 'K' | 'mol' | 'cd' | 'rad'  ;
 enum_declaration : 'enum' enum_name ':' '[' enum_member_decl (',' enum_member_decl)* ']' NEWLINE  ;
 enum_member_decl : enum_member_name ( '=' enum_member_value )?  ;
 enum_name : identifier  ;
-enum_member_name : identifier  ;
+enum_member_name: qualified_identifier;
 enum_member_value : uint_literal | hex_uint_literal  ;
 
 enum_value_reference : (enum_name '!')? enum_member_name  ;
@@ -91,26 +103,26 @@ enum_value_reference : (enum_name '!')? enum_member_name  ;
 struct_declaration : 'struct' struct_name ('inherits' struct_name ('(' field_name '=='  (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT struct_member_decl+ DEDENT) | NEWLINE )  ;
 
 struct_member_decl : event_declaration|field_declaration|constraint_declaration|method_declaration|coverage_declaration  ;
-struct_name : identifier  ;
-field_name : identifier  ;
+struct_name: qualified_identifier;
+field_name: qualified_identifier;
 
 actor_declaration : 'actor' actor_name ('inherits' actor_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT actor_member_decl+ DEDENT) | NEWLINE )  ;
 
 actor_member_decl : event_declaration|field_declaration|constraint_declaration|method_declaration|coverage_declaration  ;
-actor_name : identifier  ;
+actor_name: qualified_identifier;
 
 scenario_declaration : 'scenario' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT) | NEWLINE )  ;
 
 scenario_member_decl : event_declaration|field_declaration|constraint_declaration|method_declaration|coverage_declaration|modifier_application  ;
 
 qualified_behavior_name : (actor_name '.')? behavior_name  ;
-behavior_name : identifier  ;
+behavior_name: qualified_identifier;
 
 action_declaration : 'action' qualified_behavior_name ('inherits' qualified_behavior_name ('(' field_name '==' (enum_value_reference | bool_literal) ')')?)? ( (':' INDENT (scenario_member_decl | behavior_specification)+ DEDENT) | NEWLINE )  ;
 
 modifier_declaration : 'modifier' (actor_name '.')? modifier_name ('of' qualified_behavior_name)? ( (':' INDENT (scenario_member_decl | on_directive)+ DEDENT) | NEWLINE )  ;
 
-modifier_name : identifier  ;
+modifier_name: qualified_identifier;
 
 global_parameter_declaration : 'global' parameter_declaration  ;
 
@@ -129,8 +141,8 @@ event_specification : event_reference ( (event_field_decl)? 'if' event_condition
 
 event_reference : '@' event_path  ;
 event_field_decl : 'as' event_field_name  ;
-event_field_name : identifier  ;
-event_name : identifier  ;
+event_field_name: qualified_identifier;
+event_name: qualified_identifier;
 event_path : (expression '.')? event_name  ;
 
 event_condition : bool_expression | rise_expression | fall_expression | elapsed_expression | every_expression  ;
@@ -170,7 +182,7 @@ return_type : type_declarator  ;
 method_implementation : 'is' (method_qualifier)? ('expression' expression | 'undefined' | 'external' structured_identifier '(' (argument_list)? ')')  ;
 
 method_qualifier : 'only'  ;
-method_name : identifier  ;
+method_name: qualified_identifier;
 
 coverage_declaration : ('cover' | 'record') '(' argument_list ')' NEWLINE  ;
 
@@ -186,9 +198,9 @@ do_directive : 'do' do_member  ;
 
 do_member : (label_name ':')? ( composition | behavior_invocation | wait_directive | emit_directive | call_directive )  ;
 
-label_name : identifier  ;
+label_name: qualified_identifier;
 
-composition : composition_operator ('(' argument_list ')')?':' INDENT      do_member+ DEDENT (behavior_with_declaration)?  ;
+composition: composition_operator ('(' unqualified_argument_list? ')')?':' INDENT do_member+ DEDENT (behavior_with_declaration)?;
 
 composition_operator : 'serial' | 'one_of' | 'parallel'  ;
 
@@ -215,13 +227,19 @@ argument_list_specification : argument_specification (',' argument_specification
 
 argument_specification : argument_name ':' type_declarator ('=' default_value)?  ;
 
-argument_name : identifier  ;
+argument_name: qualified_identifier;
 
 argument_list : positional_argument (',' positional_argument)* (',' named_argument)*
                 | named_argument (',' named_argument)*  ;
 
 positional_argument : expression  ;
 named_argument : argument_name ':' expression  ;
+
+unqualified_argument_list: positional_argument (',' positional_argument)* (',' unqualified_named_argument)*
+                           | unqualified_named_argument (',' unqualified_named_argument)*;
+
+unqualified_argument_name: identifier;
+unqualified_named_argument: unqualified_argument_name ':' expression;
 
 expression : implication | ternary_op_exp  ;
 
@@ -254,7 +272,7 @@ postfix_exp : primary_exp #primary_exp_pe
 
 field_access : postfix_exp '.' field_name  ;
 
-primary_exp : value_exp | 'it' | identifier | '(' expression ')'  ;
+primary_exp: value_exp | 'it' | qualified_identifier | '(' expression ')';
 
 value_exp : integer_literal
             | float_literal
@@ -291,10 +309,12 @@ FLOAT_LITERAL : ('+' | '-')? DIGIT* '.' DIGIT+ (('e' | 'E') ('+'|'-')? DIGIT+)? 
 
 identifier : IDENTIFIER | 'expression' | 'unit' | 'import' | si_base_unit_name | 'factor' | 'offset' | 'enum' | 'struct' | 'actor' | 'scenario' | 'action' | 'modifier' ;
 IDENTIFIER : ( [A-Za-z] [A-Za-z0-9_]* ) | ( '|' (~[|])+ '|' )  ;
+qualified_identifier: identifier | prefixed_identifier;
+prefixed_identifier: namespace_name? '::' identifier;
 
-physical_literal : PHYSICAL_LITERAL;
-PHYSICAL_LITERAL : (FLOAT_LITERAL | INTEGER_LITERAL) IDENTIFIER ;
-unit_name : IDENTIFIER | si_base_unit_name ;
+physical_literal: PHYSICAL_LITERAL;
+PHYSICAL_LITERAL: (FLOAT_LITERAL | INTEGER_LITERAL) ( IDENTIFIER | IDENTIFIER '::' IDENTIFIER);
+unit_name: ( IDENTIFIER '::' )? ( IDENTIFIER | si_base_unit_name );
 
 LINEJOINER : '\\' '\r'? '\n' -> skip ;
 

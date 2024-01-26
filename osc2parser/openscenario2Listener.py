@@ -53,6 +53,78 @@ class openscenario2Listener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by openscenario2Parser#main_statement.
+    def enterMain_statement(self, ctx:openscenario2Parser.Main_statementContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#main_statement.
+    def exitMain_statement(self, ctx:openscenario2Parser.Main_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#namespace_statement.
+    def enterNamespace_statement(self, ctx:openscenario2Parser.Namespace_statementContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#namespace_statement.
+    def exitNamespace_statement(self, ctx:openscenario2Parser.Namespace_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#namespace_list.
+    def enterNamespace_list(self, ctx:openscenario2Parser.Namespace_listContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#namespace_list.
+    def exitNamespace_list(self, ctx:openscenario2Parser.Namespace_listContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#namespace_name.
+    def enterNamespace_name(self, ctx:openscenario2Parser.Namespace_nameContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#namespace_name.
+    def exitNamespace_name(self, ctx:openscenario2Parser.Namespace_nameContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#global_namespace_name.
+    def enterGlobal_namespace_name(self, ctx:openscenario2Parser.Global_namespace_nameContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#global_namespace_name.
+    def exitGlobal_namespace_name(self, ctx:openscenario2Parser.Global_namespace_nameContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#export_statement.
+    def enterExport_statement(self, ctx:openscenario2Parser.Export_statementContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#export_statement.
+    def exitExport_statement(self, ctx:openscenario2Parser.Export_statementContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#export_specification.
+    def enterExport_specification(self, ctx:openscenario2Parser.Export_specificationContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#export_specification.
+    def exitExport_specification(self, ctx:openscenario2Parser.Export_specificationContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#export_wildcard_specification.
+    def enterExport_wildcard_specification(self, ctx:openscenario2Parser.Export_wildcard_specificationContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#export_wildcard_specification.
+    def exitExport_wildcard_specification(self, ctx:openscenario2Parser.Export_wildcard_specificationContext):
+        pass
+
+
     # Enter a parse tree produced by openscenario2Parser#osc_declaration.
     def enterOsc_declaration(self, ctx:openscenario2Parser.Osc_declarationContext):
         pass
@@ -962,6 +1034,33 @@ class openscenario2Listener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by openscenario2Parser#unqualified_argument_list.
+    def enterUnqualified_argument_list(self, ctx:openscenario2Parser.Unqualified_argument_listContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#unqualified_argument_list.
+    def exitUnqualified_argument_list(self, ctx:openscenario2Parser.Unqualified_argument_listContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#unqualified_argument_name.
+    def enterUnqualified_argument_name(self, ctx:openscenario2Parser.Unqualified_argument_nameContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#unqualified_argument_name.
+    def exitUnqualified_argument_name(self, ctx:openscenario2Parser.Unqualified_argument_nameContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#unqualified_named_argument.
+    def enterUnqualified_named_argument(self, ctx:openscenario2Parser.Unqualified_named_argumentContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#unqualified_named_argument.
+    def exitUnqualified_named_argument(self, ctx:openscenario2Parser.Unqualified_named_argumentContext):
+        pass
+
+
     # Enter a parse tree produced by openscenario2Parser#expression.
     def enterExpression(self, ctx:openscenario2Parser.ExpressionContext):
         pass
@@ -1238,6 +1337,24 @@ class openscenario2Listener(ParseTreeListener):
 
     # Exit a parse tree produced by openscenario2Parser#identifier.
     def exitIdentifier(self, ctx:openscenario2Parser.IdentifierContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#qualified_identifier.
+    def enterQualified_identifier(self, ctx:openscenario2Parser.Qualified_identifierContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#qualified_identifier.
+    def exitQualified_identifier(self, ctx:openscenario2Parser.Qualified_identifierContext):
+        pass
+
+
+    # Enter a parse tree produced by openscenario2Parser#prefixed_identifier.
+    def enterPrefixed_identifier(self, ctx:openscenario2Parser.Prefixed_identifierContext):
+        pass
+
+    # Exit a parse tree produced by openscenario2Parser#prefixed_identifier.
+    def exitPrefixed_identifier(self, ctx:openscenario2Parser.Prefixed_identifierContext):
         pass
 
 

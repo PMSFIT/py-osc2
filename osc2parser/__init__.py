@@ -1,6 +1,6 @@
 """Python OpenSCENARIO 2 Parser
 
-(C) 2021-2023 PMSF IT Consulting Pierre R. Mai
+(C) 2021-2024 PMSF IT Consulting Pierre R. Mai
 """
 __version__ = '0.0.8'
 from .openscenario2Parser import openscenario2Parser

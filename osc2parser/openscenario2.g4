@@ -303,7 +303,7 @@ fragment DIGIT: '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 fragment HEX_DIGIT: DIGIT | 'A' | 'a' | 'B' | 'b' | 'C' | 'c' | 'D' | 'd' | 'E' | 'e' | 'F' | 'f';
 
 float_literal: FLOAT_LITERAL;
-FLOAT_LITERAL: ('+' | '-')? DIGIT* '.' DIGIT+ (('e' | 'E') ('+'|'-')? DIGIT+)?;
+FLOAT_LITERAL: ('+' | '-')? ( DIGIT* '.' DIGIT+ (('e' | 'E') ('+'|'-')? DIGIT+)? | DIGIT+ ('e' | 'E') ('+'|'-')? DIGIT+ | 'inf' | 'nan' );
 
 identifier: IDENTIFIER | 'expression' | 'unit' | 'import' | si_base_unit_name | 'factor' | 'offset' | 'enum' | 'struct' | 'actor' | 'scenario' | 'action' | 'modifier';
 IDENTIFIER: ( [A-Za-z] [A-Za-z0-9_]* ) | ( '|' (~[|])+ '|' );

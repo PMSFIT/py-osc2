@@ -31,10 +31,13 @@ from antlr4.Token import Token
 # SOFTWARE.
 
 class DenterHelper(object):
-    def __init__(self, nl_token, indent_token, dedent_token, should_ignore_eof):
+    def __init__(self, nl_token, open_bracket_token, close_bracket_token, indent_token, dedent_token, should_ignore_eof):
         self.dents_buffer = []
         self.indentations = []
+        self.bracket_level = 0
         self.nl_token = nl_token
+        self.open_bracket_token = open_bracket_token
+        self.close_bracket_token = close_bracket_token
         self.indent_token = indent_token
         self.dedent_token = dedent_token
         self.reached_eof = False
@@ -52,6 +55,12 @@ class DenterHelper(object):
             r = self.handle_newline_token(t)
         elif t.type == Token.EOF:
             r = self.apply(t)
+        elif t.type == self.open_bracket_token:
+            self.bracket_level += 1
+            r = t
+        elif t.type == self.close_bracket_token:
+            self.bracket_level -= 1
+            r = t
         else:
             r = t
         return r
@@ -66,6 +75,7 @@ class DenterHelper(object):
     def init_if_first_run(self):
         if not self.indentations:
             self.indentations.insert(0, 0)
+            self.bracket_level = 0
             while True:
                 first_real_token = self.pull_token()
                 if first_real_token.type != self.nl_token:
@@ -87,14 +97,20 @@ class DenterHelper(object):
         if indent > 0 and nl_text[0] == '\r':
             indent -= 1
         prev_indent = self.indentations[0]
-        if indent == prev_indent:
+        if self.bracket_level > 0:
+            if next_next.type == self.close_bracket_token:
+                self.bracket_level -= 1
+            r = next_next
+        elif indent == prev_indent:
             r = t
+            self.dents_buffer.append(next_next)
         elif indent > prev_indent:
             r = self.create_token(self.indent_token, t)
             self.indentations.insert(0, indent)
+            self.dents_buffer.append(next_next)
         else:
             r = self.unwind_to(indent, t)
-        self.dents_buffer.append(next_next)
+            self.dents_buffer.append(next_next)
         return r
 
     def create_token(self, token_type, copy_from: CommonToken):

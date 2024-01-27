@@ -1,0 +1,18 @@
+enum myenum: [ alpha, beta, gamma ]
+
+enum myenum2: [
+    alpha,
+    beta,  # Comment
+    gamma
+]
+
+enum myenum3: [ alpha, # Comment
+    beta, # Comment
+    gamma ] # Comment
+
+enum myenum4: [ \
+    alpha, \
+    beta,  # Comment
+    gamma
+]
+

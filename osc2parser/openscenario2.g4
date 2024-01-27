@@ -18,8 +18,8 @@ from .openscenario2Parser import openscenario2Parser
 }
 @lexer::members {
 class openscenario2Denter(DenterHelper):
-    def __init__(self, lexer, nl_token, indent_token, dedent_token, ignore_eof):
-        super().__init__(nl_token, indent_token, dedent_token, ignore_eof)
+    def __init__(self, lexer, nl_token, open_bracket_token, close_bracket_token, indent_token, dedent_token, ignore_eof):
+        super().__init__(nl_token, open_bracket_token, close_bracket_token, indent_token, dedent_token, ignore_eof)
         self.lexer: openscenario2Lexer = lexer
 
     def pull_token(self):
@@ -29,7 +29,7 @@ denter = None
 
 def nextToken(self):
     if not self.denter:
-        self.denter = self.openscenario2Denter(self, self.NEWLINE, openscenario2Parser.INDENT, openscenario2Parser.DEDENT, False)
+        self.denter = self.openscenario2Denter(self, self.NEWLINE, self.OPEN_BRACKET, self.CLOSE_BRACKET, openscenario2Parser.INDENT, openscenario2Parser.DEDENT, False)
     return self.denter.next_token()
 
 }
@@ -92,7 +92,7 @@ si_factor: 'factor' ':' ( float_literal | integer_literal );
 si_offset: 'offset' ':' ( float_literal | integer_literal );
 si_base_unit_name: 'kg' | 'm' | 's' | 'A' | 'K' | 'mol' | 'cd' | 'rad';
 
-enum_declaration: 'enum' enum_name ':' '[' enum_member_decl (',' enum_member_decl)* ']' NEWLINE;
+enum_declaration: 'enum' enum_name ':' OPEN_BRACKET enum_member_decl (',' enum_member_decl)* CLOSE_BRACKET NEWLINE;
 enum_member_decl: enum_member_name ( '=' enum_member_value )?;
 enum_name: identifier;
 enum_member_name: qualified_identifier;
@@ -128,7 +128,7 @@ global_parameter_declaration: 'global' parameter_declaration;
 
 type_extension: enum_type_extension | structured_type_extension;
 
-enum_type_extension: 'extend' enum_name ':' '[' enum_member_decl (',' enum_member_decl)* ']' NEWLINE;
+enum_type_extension: 'extend' enum_name ':' OPEN_BRACKET enum_member_decl (',' enum_member_decl)* CLOSE_BRACKET NEWLINE;
 
 structured_type_extension: 'extend' extendable_type_name ':' INDENT extension_member_decl+ DEDENT;
 
@@ -264,7 +264,7 @@ factor: postfix_exp | '-' factor;
 postfix_exp: primary_exp #primary_exp_pe
              | postfix_exp '.' 'as' '(' type_declarator ')' #cast_exp_pe
              | postfix_exp '.' 'is' '(' type_declarator ')' #type_test_exp_pe
-             | postfix_exp '[' expression ']' #element_access_pe
+             | postfix_exp OPEN_BRACKET expression CLOSE_BRACKET #element_access_pe
              | postfix_exp '(' (argument_list)? ')' #function_application_pe
              | postfix_exp '.' field_name #field_access_pe;
 
@@ -281,8 +281,8 @@ value_exp: integer_literal
            | list_constructor
            | range_constructor;
 
-list_constructor: '[' expression (',' expression)* ']';
-range_constructor: 'range' '(' expression ',' expression ')' | '[' expression '..' expression ']';
+list_constructor: OPEN_BRACKET expression (',' expression)* CLOSE_BRACKET;
+range_constructor: 'range' '(' expression ',' expression ')' | OPEN_BRACKET expression '..' expression CLOSE_BRACKET;
 
 string_literal: STRING_LITERAL;
 STRING_LITERAL: SHORTSTRING | LONGSTRING;
@@ -313,6 +313,9 @@ prefixed_identifier: namespace_name? '::' identifier;
 physical_literal: PHYSICAL_LITERAL;
 PHYSICAL_LITERAL: (FLOAT_LITERAL | INTEGER_LITERAL) ( IDENTIFIER | IDENTIFIER '::' IDENTIFIER);
 unit_name: ( IDENTIFIER '::' )? ( IDENTIFIER | si_base_unit_name );
+
+OPEN_BRACKET: '[';
+CLOSE_BRACKET: ']';
 
 LINEJOINER: '\\' '\r'? '\n' -> skip;
 

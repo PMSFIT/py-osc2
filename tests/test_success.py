@@ -19,5 +19,8 @@ class TestCorrectParse(unittest.TestCase):
     def test_floatliterals(self):
         self.assertEqual(osc2parser.parse_file(example_file('float_literals.osc'))[1],0)
 
+    def test_enums(self):
+        self.assertEqual(osc2parser.parse_file(example_file('enums.osc'))[1],0)
+
 if __name__ == '__main__':
     unittest.main()

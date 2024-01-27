@@ -8,12 +8,13 @@
 
 ## What is it?
 
-PMSF **py-osc2** is a Python package for working with ASAM OpenSCENARIO 2
-scenario files.
+PMSF **py-osc2** is a Python package for working with ASAM OpenSCENARIO
+DSL 2.x scenario files.
 
 Note that this package is currently provided as a community service.
-It is based on the current public review draft of the language, which
-is **non-final**, and might include updates based on current developments.
+It is based on the current public review draft of version 2.1.0 of the
+language, which is **non-final**, and might include updates based on
+current developments.
 It is offered without any support and should be considered draft alpha
 quality.
 
@@ -23,14 +24,15 @@ the grammar in ANTLR4, and any intermediate fixes might contain errors.
 Nor is the rendering of the grammar in ANTLR4 intended for purposes
 other than the goals of this package.
 
-If you are interested in OpenSCENARIO 2 development, please feel free
+If you are interested in OpenSCENARIO DSL development, please feel free
 to contact us directly.
 
 ## Main features
 
-- ANTLR4-based parser and lexer for parsing ASAM OpenSCENARIO 2.x files.
+- ANTLR4-based parser and lexer for parsing ASAM OpenSCENARIO DSL 2.x
+  files.
 - Simple syntax checking driver `osc2parser` for parsing and checking
-  ASAM OpenSCENARIO 2.x files.
+  ASAM OpenSCENARIO DSL 2.x files.
 
 ## Where to get it
 
@@ -48,7 +50,6 @@ pip install py-osc2
 ## Dependencies
 
 - [antlr4-python3-runtime](https://pypi.org/project/antlr4-python3-runtime/)
-- [antlr-denter](https://pypi.org/project/antlr-denter/)
 
 When rebuilding the parser from its grammar:
 
@@ -56,7 +57,7 @@ When rebuilding the parser from its grammar:
 
 ## Rebuilding the parser
 
-To rebuild the parser, you need [setuptools-antlr](https://cython.org/)
+To rebuild the parser, you need [setuptools-antlr](https://pypi.org/project/setuptools-antlr/)
 in addition to the normal dependencies above:
 
 ```sh
@@ -90,7 +91,7 @@ python setup.py antlr develop
 ## Documentation
 
 After installation of the package, an executable script, called
-`osc2parser`, is available to parse and check ASAM OpenSCENARIO 2.x
+`osc2parser`, is available to parse and check ASAM OpenSCENARIO DSL 2.x
 files:
 
 ```sh

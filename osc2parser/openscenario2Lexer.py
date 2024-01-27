@@ -5,7 +5,7 @@ from typing.io import TextIO
 import sys
 
 
-from antlr_denter.DenterHelper import DenterHelper
+from .openscenario2DenterHelper import DenterHelper
 from .openscenario2Parser import openscenario2Parser
 
 

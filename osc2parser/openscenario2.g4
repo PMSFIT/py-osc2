@@ -13,7 +13,7 @@ grammar openscenario2;
 tokens { INDENT, DEDENT }
 
 @lexer::header{
-from antlr_denter.DenterHelper import DenterHelper
+from .openscenario2DenterHelper import DenterHelper
 from .openscenario2Parser import openscenario2Parser
 }
 @lexer::members {

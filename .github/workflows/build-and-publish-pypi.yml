@@ -10,10 +10,10 @@ jobs:
       id-token: write
     steps:
     - name: Checkout py-osc2
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: 3.9
 
@@ -34,11 +34,11 @@ jobs:
 
     - name: Install and Run Tests
       run: |
-        python3 setup.py install
+        python3 -m pip install dist/*.whl
         python3 -m unittest tests/test*.py
 
     - name: Upload Distribution
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Distribution
         path: dist/
@@ -50,4 +50,4 @@ jobs:
     - name: Publish Snapshot and Release to TestPyPI
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
-        repository_url: https://test.pypi.org/legacy/
+        repository-url: https://test.pypi.org/legacy/

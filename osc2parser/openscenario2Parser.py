@@ -279,7 +279,7 @@ def serializedATN():
         buf.write("\2\2\2\u01e4\u01e5\7n\2\2\u01e5\u01e6\7p\2\2\u01e6A\3")
         buf.write("\2\2\2\u01e7\u01ea\5F$\2\u01e8\u01e9\7%\2\2\u01e9\u01eb")
         buf.write("\5H%\2\u01ea\u01e8\3\2\2\2\u01ea\u01eb\3\2\2\2\u01ebC")
-        buf.write("\3\2\2\2\u01ec\u01ed\5\u011e\u0090\2\u01edE\3\2\2\2\u01ee")
+        buf.write("\3\2\2\2\u01ec\u01ed\5\u0120\u0091\2\u01edE\3\2\2\2\u01ee")
         buf.write("\u01ef\5\u0120\u0091\2\u01efG\3\2\2\2\u01f0\u01f3\5\u0118")
         buf.write("\u008d\2\u01f1\u01f3\5\u011a\u008e\2\u01f2\u01f0\3\2\2")
         buf.write("\2\u01f2\u01f1\3\2\2\2\u01f3I\3\2\2\2\u01f4\u01f5\5D#")
@@ -3141,8 +3141,8 @@ class openscenario2Parser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def identifier(self):
-            return self.getTypedRuleContext(openscenario2Parser.IdentifierContext,0)
+        def qualified_identifier(self):
+            return self.getTypedRuleContext(openscenario2Parser.Qualified_identifierContext,0)
 
 
         def getRuleIndex(self):
@@ -3172,7 +3172,7 @@ class openscenario2Parser ( Parser ):
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 490
-            self.identifier()
+            self.qualified_identifier()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

@@ -94,7 +94,7 @@ si_base_unit_name: 'kg' | 'm' | 's' | 'A' | 'K' | 'mol' | 'cd' | 'rad';
 
 enum_declaration: 'enum' enum_name ':' OPEN_BRACKET enum_member_decl (',' enum_member_decl)* CLOSE_BRACKET NEWLINE;
 enum_member_decl: enum_member_name ( '=' enum_member_value )?;
-enum_name: identifier;
+enum_name: qualified_identifier;
 enum_member_name: qualified_identifier;
 enum_member_value: uint_literal | hex_uint_literal;
 
